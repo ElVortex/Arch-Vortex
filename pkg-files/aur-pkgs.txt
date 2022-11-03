@@ -1,0 +1,15 @@
+nvidia-470xx-utils
+nvidia-470xx-dkms
+--END OF MINIMAL INSTALL--
+autojump
+dxvk-bin
+github-desktop-bin
+vde2
+waterfox-g4-bin
+capitaine-cursors
+qt5-styleplugins
+epson-inkjet-printer-201601w
+huiontablet
+timeshift
+timeshift-autosnap
+sddm-theme-sugar-candy-git

@@ -1,0 +1,16 @@
+plasma-desktop
+sddm
+--END OF MINIMAL INSTALL--
+bluedevil
+discover
+gwenview
+kcodecs
+kde-gtk-config
+kdeplasma-addons
+kinfocenter
+konsole
+milou
+plasma-nm
+plasma-pa
+xdg-desktop-portal-kde
+zeroconf-ioslave

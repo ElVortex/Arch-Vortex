@@ -1,0 +1,3 @@
+sddm
+--END OF MINIMAL INSTALL--
+lxappearance
