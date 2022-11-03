@@ -72,6 +72,7 @@ mountallsubvol () {
         mount -o ${MOUNT_OPTIONS},subvol=@home ${partition3} /mnt/home
     else
         mount -o ${MOUNT_OPTIONS},subvol=@home /dev/mapper/cryptroot /mnt/home
+    fi
 }
 
 subvolumesetup () {
@@ -83,6 +84,7 @@ subvolumesetup () {
         mount -o ${MOUNT_OPTIONS},subvol=@ ${partition3} /mnt
     else
         mount -o ${MOUNT_OPTIONS},subvol=@ /dev/mapper/cryptroot /mnt
+    fi
     mkdir -p /mnt/{home,boot}
     mountallsubvol
 }
