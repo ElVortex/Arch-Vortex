@@ -64,11 +64,11 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
-if [[ ${DESKTOP_ENV} == "kde" ]]; then
+if [[ ${DESKTOP_ENV} == "kde" || ${DESKTOP_ENV} == "awesome" ]]; then
   systemctl enable sddm.service
   if [[ ${INSTALL_TYPE} == "FULL" ]]; then
     echo [Theme] >>  /etc/sddm.conf
-    echo Current=sugar-candy >> /etc/sddm.conf
+    echo Current=Nordic >> /etc/sddm.conf
   fi
 
 elif [[ "${DESKTOP_ENV}" == "gnome" ]]; then
@@ -122,10 +122,10 @@ cd /home/$USERNAME/
 mkdir -v /home/$USERNAME/.wallpapers
 chmod -R a=xrw /home/$USERNAME/.wallpapers
 cd /home/$USERNAME/.wallpapers
-cp $HOME/Arch-Vortex/pkg-files/wallpapers.txt /home/$USERNAME/.wallpapers/
-chmod -R a=xrw /home/$USERNAME/.wallpapers/wallpapers.txt
+cp $HOME/Arch-Vortex/pkg-files/wallpapers-pkgs.txt /home/$USERNAME/.wallpapers/
+chmod -R a=xrw /home/$USERNAME/.wallpapers/wallpapers-pkgs.txt
 ls
-wget -i /home/$USERNAME/.wallpapers/wallpapers.txt
+wget -i /home/$USERNAME/.wallpapers/wallpapers-pkgs.txt
 cd /home/$USERNAME/
 ls
 

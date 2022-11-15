@@ -12,4 +12,4 @@ epson-inkjet-printer-201601w
 huiontablet
 timeshift
 timeshift-autosnap
-sddm-theme-sugar-candy-git
+sddm-nordic-theme-git
