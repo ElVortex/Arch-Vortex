@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #github-action genshdoc
+#
+# @file Setup
+# @brief Configures installed system, installs base packages, and creates user.
 
 echo -ne "
 -------------------------------------------------------------------------
@@ -14,7 +17,7 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
-#remove pacman keyring signature check if VM shows pacman error on script testing. Do not enable if installing your definitive system.
+# Remove pacman Error for testing purposes on VM
 
 #sed -i 's/SigLevel    = Required DatabaseOptional/SigLevel = Never/' /etc/pacman.conf
 #sed -i 's/LocalFileSigLevel/#LocalFileSigLevel/' /etc/pacman.conf
