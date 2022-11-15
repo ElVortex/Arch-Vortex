@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 #github-action genshdoc
+#
+# @file Preinstall
+# @brief Contains the steps necessary to configure and pacstrap the install to selected drive.
+
 echo -ne "
 -------------------------------------------------------------------------
   ██╗  ██╗ ██████╗ ██████╗ ████████╗██████╗██╗  ██╗     ██████╗ ███████╗
@@ -170,8 +174,6 @@ if [[ ! -d "/sys/firmware/efi" ]]; then
 else
     pacstrap /mnt efibootmgr --noconfirm --needed
 fi
-
-
 
 
 

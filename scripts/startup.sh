@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #github-action genshdoc
 #
+# @file Startup
+
 CONFIG_FILE=$CONFIGS_DIR/setup.conf
 if [ ! -f $CONFIG_FILE ]; then
     touch -f $CONFIG_FILE
@@ -169,8 +171,8 @@ select_option() {
 
     return $(( $active_col + $active_row * $colmax ))
 }
-
-
+# @description Displays ArchTitus logo
+# @noargs
 logo () {
 # This will be shown on every set as user is progressing
 echo -ne "
@@ -198,8 +200,12 @@ select_option $? 1 "${options[@]}"
 case $? in
 0) set_option FS btrfs;;
 1) set_option FS ext4;;
-2) set_option FS luks-btrfs;;
-3) set_option FS luks-ext4;;
+2)
+    set_password "LUKS_PASSWORD"
+    set_option FS luks-btrfs;;
+3)
+    set_password "LUKS_PASSWORD"
+    set_option FS luks-ext4;;
 4) exit ;;
 *) echo "Wrong option please select again"; filesystem;;
 esac
@@ -329,7 +335,7 @@ installtype () {
 
 grubtheme () {
   echo -ne "Please select your GRUB theme (Post BIOS-screen loading menu)"
-  options=( `for f in configs/boot/grub/themes/*; do echo "$f"; done` none )
+  options=( `for f in configs/boot/grub/themes/*; do echo "$(basename $f)"; done` none )
   select_option $? 4 "${options[@]}"
   grub_theme=${options[$?]}
   set_option THEME_NAME $grub_theme
