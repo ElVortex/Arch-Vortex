@@ -154,7 +154,7 @@ fi
 
 
 if [[ ${FS} == "luks-btrfs" || ${FS} == "luks-ext4" ]]; then
-    sed -i 's/^HOOKS=.*/HOOKS=(base udev autodetect keyboard keymap modconf encrypt block filesystems fsck)/' /etc/mkinitcpio.conf
+    sed -i 's/^HOOKS=.*/HOOKS=(base udev autodetect keyboard keymap modconf block encrypt filesystems fsck)/' /etc/mkinitcpio.conf
     mkinitcpio -p linux
 fi
 
