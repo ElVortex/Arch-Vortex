@@ -17,7 +17,7 @@ Installing AUR Softwares
 "
 
 source $HOME/Arch-Vortex/configs/setup.conf
-source $HOME/Arch-Vortex/scripts/startup.sh
+source $HOME/Arch-Vortex/scripts/scripts.sh
 
   cd ~
   mkdir "/home/$USERNAME/.cache"

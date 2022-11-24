@@ -24,7 +24,7 @@ echo -ne "
 
 
 source $HOME/Arch-Vortex/configs/setup.conf
-source $HOME/Arch-Vortex/scripts/startup.sh
+source $HOME/Arch-Vortex/scripts/scripts.sh
 echo -ne "
 -------------------------------------------------------------------------
                     Network Setup
@@ -82,7 +82,7 @@ localectl --no-ask-password set-keymap ${KEYMAP}
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 
-sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+sed -i 's/^#ParallelDownloads.*/ParallelDownloads = 8/' /etc/pacman.conf
 
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 

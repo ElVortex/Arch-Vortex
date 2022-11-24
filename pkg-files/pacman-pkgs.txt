@@ -38,7 +38,7 @@ cups
 dialog
 dmidecode
 dosfstools
-efbootmgr
+efibootmgr
 element-desktop
 elisa
 exfat-utils
@@ -100,7 +100,6 @@ pulseaudio-equalizer-ladspa
 python
 python-pip
 qbittorrent
-rar
 rnote
 rofi
 scrcpy
@@ -122,7 +121,7 @@ udisks2
 unrar
 unzip
 v4l-utils
-v4l2looopback-dkms
+v4l2loopback-dkms
 virt-manager
 virt-viewer
 virtualbox
