@@ -24,6 +24,7 @@ echo -ne "
 
 
 source $HOME/Arch-Vortex/configs/setup.conf
+source $HOME/Arch-Vortex/scripts/startup.sh
 echo -ne "
 -------------------------------------------------------------------------
                     Network Setup
@@ -98,14 +99,9 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
-sed -n '/'$INSTALL_TYPE'/q;p' $HOME/Arch-Vortex/pkg-files/pacman-pkgs.txt | while read line
-  do
-    if [[ ${line} == '--END OF MINIMAL INSTALL--' ]]; then
-      continue
-    fi
-    echo "INSTALLING: ${line}"
-    sudo pacman -S --noconfirm --needed ${line}
-  done
+package_list $HOME/Arch-Vortex/pkg-files/pacman-pkgs.txt
+echo "INSTALLING: ${packages}"
+sudo pacman -S --noconfirm --needed ${packages}
 
 
 
