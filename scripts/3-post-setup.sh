@@ -31,7 +31,7 @@ echo -ne "
 "
 
 if [[ "${FS}" == "luks-btrfs" || "${FS}" == "luks-ext4" ]]; then
-sed -i "s%GRUB_CMDLINE_LINUX_DEFAULT=\"%GRUB_CMDLINE_LINUX_DEFAULT=\"cryptdevice=UUID=${ENCRYPTED_PARTITION_UUID}:ROOT root=/dev/mapper/cryptroot %g" /etc/default/grub
+sed -i "s%GRUB_CMDLINE_LINUX=%GRUB_CMDLINE_LINUX=cryptdevice=UUID=${ENCRYPTED_PARTITION_UUID}:cryptroot root=/dev/mapper/cryptroot %g" /etc/default/grub
 fi
 
 
