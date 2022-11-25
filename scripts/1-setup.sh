@@ -23,8 +23,8 @@ echo -ne "
 #sed -i 's/LocalFileSigLevel/#LocalFileSigLevel/' /etc/pacman.conf
 
 
-source $HOME/Arch-Vortex/configs/setup.conf
-source $HOME/Arch-Vortex/scripts/scripts.sh
+source $HOME/$PROJECT_WD/configs/setup.conf
+source $HOME/$PROJECT_WD/scripts/scripts.sh
 echo -ne "
 -------------------------------------------------------------------------
                     Network Setup
@@ -99,7 +99,7 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
-package_list $HOME/Arch-Vortex/pkg-files/pacman-pkgs.txt
+package_list $HOME/$PROJECT_WD/pkg-files/pacman-pkgs.txt
 echo "INSTALLING: ${packages}"
 sudo pacman -S --noconfirm --needed ${packages}
 
@@ -139,8 +139,8 @@ if [ $(whoami) = "root"  ]; then
 
     echo "root:$PASSWD" | chpasswd
 
-	cp -R $HOME/Arch-Vortex /home/$USERNAME/
-    chown -R $USERNAME: /home/$USERNAME/Arch-Vortex
+	cp -R $HOME/$PROJECT_WD /home/$USERNAME/
+    chown -R $USERNAME: /home/$USERNAME/$PROJECT_WD
     echo "Arch-Vortex copied to home directory"
 
 	echo $NAME_OF_MACHINE > /etc/hostname

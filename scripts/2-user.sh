@@ -16,8 +16,8 @@ echo -ne "
 Installing AUR Softwares
 "
 
-source $HOME/Arch-Vortex/configs/setup.conf
-source $HOME/Arch-Vortex/scripts/scripts.sh
+source $HOME/$PROJECT_WD/configs/setup.conf
+source $HOME/$PROJECT_WD/scripts/scripts.sh
 
   cd ~
   mkdir "/home/$USERNAME/.cache"
@@ -26,7 +26,7 @@ source $HOME/Arch-Vortex/scripts/scripts.sh
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   ln -s "~/zsh/.zshrc" ~/.zshrc
 
-package_list $HOME/Arch-Vortex/pkg-files/${DESKTOP_ENV}.txt
+package_list $HOME/$PROJECT_WD/pkg-files/${DESKTOP_ENV}.txt
 echo "INSTALLING: ${packages}"
 sudo pacman -S --noconfirm --needed ${packages}
 
@@ -35,7 +35,7 @@ if [[ ! $AUR_HELPER == none ]]; then
   git clone "https://aur.archlinux.org/$AUR_HELPER.git"
   cd ~/$AUR_HELPER
   makepkg -si --noconfirm
-  package_list $HOME/Arch-Vortex/pkg-files/aur-pkgs.txt
+  package_list $HOME/$PROJECT_WD/pkg-files/aur-pkgs.txt
   echo "INSTALLING: ${packages}"
   $AUR_HELPER -S --noconfirm --needed ${packages}
 fi

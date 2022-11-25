@@ -341,7 +341,14 @@ grubtheme () {
   set_option THEME_NAME $grub_theme
 }
 
+project_pwd () {
+  repository=$(basename `pwd`)
+  set_option PROJECT_WD $repository
+  echo "Current repository: ${repository}
+  "
+}
 
+project_pwd
 background_checks
 clear
 logo
