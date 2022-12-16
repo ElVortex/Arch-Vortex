@@ -22,6 +22,7 @@ echo -ne "
 #sed -i 's/SigLevel    = Required DatabaseOptional/SigLevel = Never/' /etc/pacman.conf
 #sed -i 's/LocalFileSigLevel/#LocalFileSigLevel/' /etc/pacman.conf
 
+PROJECT_WD=Arch-Vortex
 
 source $HOME/$PROJECT_WD/configs/setup.conf
 source $HOME/$PROJECT_WD/scripts/scripts.sh
