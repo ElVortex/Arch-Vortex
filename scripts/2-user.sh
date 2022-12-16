@@ -15,7 +15,7 @@ echo -ne "
 
 Installing AUR Softwares
 "
-
+PROJECT_WD=Arch-Vortex
 source $HOME/$PROJECT_WD/configs/setup.conf
 source $HOME/$PROJECT_WD/scripts/scripts.sh
 
