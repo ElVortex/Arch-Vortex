@@ -15,7 +15,7 @@ echo -ne "
 Final Setup and Configurations
 GRUB EFI Bootloader Install & Check
 "
-
+PROJECT_WD=Arch-Vortex
 source ${HOME}/$PROJECT_WD/configs/setup.conf
 
 if [[ -d "/sys/firmware/efi" ]]; then
